@@ -3,10 +3,10 @@ import type { Schema, Struct } from '@strapi/strapi';
 export interface BlocksCardGrid extends Struct.ComponentSchema {
   collectionName: 'components_blocks_card_grids';
   info: {
-    displayName: 'card-grid';
+    displayName: 'hero';
   };
   attributes: {
-    article: Schema.Attribute.Relation<'oneToOne', 'api::article.article'>;
+    hero: Schema.Attribute.Relation<'oneToOne', 'api::hero.hero'>;
     title: Schema.Attribute.String;
   };
 }
@@ -277,7 +277,7 @@ export interface SharedSlider extends Struct.ComponentSchema {
   collectionName: 'components_shared_sliders';
   info: {
     description: '';
-    displayName: 'Slider';
+    displayName: 'slider';
     icon: 'address-book';
   };
   attributes: {

@@ -1,14 +1,71 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "events",
   "info": {
     "singularName": "event",
     "pluralName": "events",
-    "displayName": "Events"
+    "displayName": "Event"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "location": {
+      "type": "string"
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "All levels",
+        "Niv. 1",
+        "Niv. 2",
+        "Niv. 3",
+        "Niv. 4",
+        "Niv. 5",
+        "Niv. 6",
+        "Niv. 7",
+        "Niv. 8",
+        "Niv. 9",
+        "Niv. 10"
+      ]
+    },
+    "price": {
+      "type": "decimal",
+      "default": 0
+    },
+    "type": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "participants": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "component": "shared.image-box",
+      "repeatable": true
+    }
+  }
 }

@@ -1,17 +1,17 @@
 {
   "collectionName": "components_blocks_card_grids",
   "info": {
-    "displayName": "card-grid"
+    "displayName": "hero"
   },
   "options": {},
   "attributes": {
-    "article": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article"
-    },
     "title": {
       "type": "string"
+    },
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hero.hero"
     }
   },
   "config": {}

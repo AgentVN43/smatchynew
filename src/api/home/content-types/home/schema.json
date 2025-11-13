@@ -38,24 +38,22 @@
         "shared.logo",
         "shared.link",
         "shared.button",
+        "blocks.group-why",
+        "shared.button-image",
+        "blocks.group-image-box",
+        "blocks.title",
+        "blocks.stats",
+        "blocks.problem-solution",
+        "blocks.card-grid",
         "hero.slider",
         "hero.image-text",
-        "hero.image-only",
-        "blocks.group-why",
-        "shared.image-box",
-        "shared.button-image",
-        "blocks.group-image-box"
+        "hero.image-only"
       ]
     },
-    "cards": {
-      "type": "component",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "component": "blocks.card-grid",
-      "repeatable": true
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hero.hero"
     }
   }
 }
