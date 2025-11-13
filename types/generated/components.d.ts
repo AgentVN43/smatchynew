@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksCardGrid extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_card_grids';
+  info: {
+    displayName: 'card-grid';
+  };
+  attributes: {
+    article: Schema.Attribute.Relation<'oneToOne', 'api::article.article'>;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksGroupImageBox extends Struct.ComponentSchema {
   collectionName: 'components_blocks_group_image_boxes';
   info: {
@@ -302,6 +313,7 @@ export interface SharedTextBox extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.card-grid': BlocksCardGrid;
       'blocks.group-image-box': BlocksGroupImageBox;
       'blocks.group-why': BlocksGroupWhy;
       'blocks.problem-solution': BlocksProblemSolution;

@@ -14,11 +14,6 @@
     "title": {
       "type": "string"
     },
-    "hero": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::hero.hero"
-    },
     "blocks": {
       "type": "dynamiczone",
       "components": [

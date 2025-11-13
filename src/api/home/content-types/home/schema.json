@@ -23,11 +23,6 @@
         }
       }
     },
-    "hero": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::hero.hero"
-    },
     "blocks": {
       "type": "dynamiczone",
       "pluginOptions": {
@@ -52,10 +47,15 @@
         "blocks.group-image-box"
       ]
     },
-    "testimonials": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::testimonial.testimonial"
+    "cards": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "blocks.card-grid",
+      "repeatable": true
     }
   }
 }

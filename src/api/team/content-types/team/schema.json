@@ -13,16 +13,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "hero": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::hero.hero"
-    },
-    "team_members": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::team-member.team-member"
     }
   }
 }
