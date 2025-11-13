@@ -1,0 +1,78 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm i
+      
+      - name: Clean Install dependencies
+        run: npm ci
+
+      - name: Install PG (if not in package.json)
+        run: npm install pg --save
+
+      - name: Install PM2 as dev dependency (for npx)
+        run: npm install pm2 --save-dev
+
+      - name: Build Strapi (production)
+        run: NODE_ENV=production npm run build
+        env:
+          CI: true
+
+      - name: Deploy built files to VPS
+        uses: appleboy/scp-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: "."
+          target: "/www/wwwroot/strapi.annk.info"
+          # Exclude unnecessary files
+          exclude: |
+            .git
+            .github
+            *.md
+            .env
+            .DS_Store
+            .strapi-updater.json
+
+      - name: Restart app via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: |
+            set -e
+            cd /www/wwwroot/strapi.annk.info
+
+            # === BẮT BUỘC: Load NVM để có node/npm/npx ===
+            export NVM_DIR="/root/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+            [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+            # Sửa xung đột NVM + npm prefix
+            nvm use --delete-prefix v20.19.5 --silent
+
+            # Start/restart with npx pm2 (uses local pm2 from devDependencies)
+            npx pm2 delete strapi
+            npx pm2 start "npm run start" --name strapi
+            npx pm2 save
+            # === DEPLOY THÀNH CÔNG ===
