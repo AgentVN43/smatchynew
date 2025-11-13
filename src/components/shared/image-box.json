@@ -1,17 +1,14 @@
 {
-  "collectionName": "components_shared_seos",
+  "collectionName": "components_shared_image_boxes",
   "info": {
-    "displayName": "seo"
+    "displayName": "image-box"
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
-      "type": "string"
+    "title": {
+      "type": "text"
     },
-    "meta_description": {
-      "type": "string"
-    },
-    "meta_image": {
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -20,9 +17,6 @@
         "videos",
         "audios"
       ]
-    },
-    "keywords": {
-      "type": "string"
     }
   },
   "config": {}

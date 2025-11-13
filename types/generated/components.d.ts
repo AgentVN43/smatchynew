@@ -1,5 +1,207 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BlocksGroupImageBox extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_group_image_boxes';
+  info: {
+    displayName: 'group_image_box';
+  };
+  attributes: {
+    image_box: Schema.Attribute.Component<'shared.image-box', true>;
+  };
+}
+
+export interface BlocksGroupWhy extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_group_whies';
+  info: {
+    displayName: 'group_why';
+  };
+  attributes: {
+    reason: Schema.Attribute.Component<'shared.text-box', true>;
+  };
+}
+
+export interface BlocksProblemSolution extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_problem_solutions';
+  info: {
+    displayName: 'problem-solution';
+  };
+  attributes: {
+    problem_items: Schema.Attribute.Component<'shared.icon-text', true>;
+    problem_title: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'The Problem'>;
+    solution_items: Schema.Attribute.Component<'shared.icon-text', true>;
+    solution_title: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'The Solution'>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksStats extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_stats';
+  info: {
+    displayName: 'stats';
+  };
+  attributes: {
+    stats_item: Schema.Attribute.Component<'shared.text-box', true>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface BlocksTitle extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_titles';
+  info: {
+    displayName: 'title';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface HeroImageOnly extends Struct.ComponentSchema {
+  collectionName: 'components_hero_image_onlies';
+  info: {
+    displayName: 'image-only';
+  };
+  attributes: {
+    background_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    heading: Schema.Attribute.Text;
+    sub_heading: Schema.Attribute.Text;
+  };
+}
+
+export interface HeroImageText extends Struct.ComponentSchema {
+  collectionName: 'components_hero_image_texts';
+  info: {
+    displayName: 'image-text';
+  };
+  attributes: {
+    background_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    button_image: Schema.Attribute.Component<'shared.button-image', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 2;
+        },
+        number
+      >;
+    heading: Schema.Attribute.Text;
+    main_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    sub_heading: Schema.Attribute.Text;
+  };
+}
+
+export interface HeroSlider extends Struct.ComponentSchema {
+  collectionName: 'components_hero_sliders';
+  info: {
+    displayName: 'slider';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', true>;
+    heading: Schema.Attribute.Text;
+    slider_images: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    sub_heading: Schema.Attribute.Text;
+  };
+}
+
+export interface LayoutHeader extends Struct.ComponentSchema {
+  collectionName: 'components_layout_headers';
+  info: {
+    displayName: 'header';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    logo: Schema.Attribute.Component<'shared.logo', false>;
+    nav_items: Schema.Attribute.Component<'shared.link', true>;
+  };
+}
+
+export interface SharedButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_buttons';
+  info: {
+    displayName: 'button';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+    style: Schema.Attribute.Enumeration<['primary', 'secondary']>;
+  };
+}
+
+export interface SharedButtonImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_button_images';
+  info: {
+    displayName: 'button-image';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+  };
+}
+
+export interface SharedIconText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_icon_texts';
+  info: {
+    displayName: 'icon-text';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedImageBox extends Struct.ComponentSchema {
+  collectionName: 'components_shared_image_boxes';
+  info: {
+    displayName: 'image-box';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.Text;
+  };
+}
+
+export interface SharedLink extends Struct.ComponentSchema {
+  collectionName: 'components_shared_links';
+  info: {
+    displayName: 'link';
+  };
+  attributes: {
+    is_external: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.String;
+  };
+}
+
+export interface SharedLogo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_logos';
+  info: {
+    displayName: 'logo';
+  };
+  attributes: {
+    href: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    is_external: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    label: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -35,18 +237,28 @@ export interface SharedRichText extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedRichtext extends Struct.ComponentSchema {
+  collectionName: 'components_shared_richtexts';
+  info: {
+    displayName: 'richtext';
+  };
+  attributes: {
+    text_area: Schema.Attribute.RichText;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
-    description: '';
-    displayName: 'Seo';
-    icon: 'allergies';
-    name: 'Seo';
+    displayName: 'seo';
   };
   attributes: {
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
+    keywords: Schema.Attribute.String;
+    meta_description: Schema.Attribute.String;
+    meta_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    metaTitle: Schema.Attribute.String;
   };
 }
 
@@ -62,14 +274,57 @@ export interface SharedSlider extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSocial extends Struct.ComponentSchema {
+  collectionName: 'components_shared_socials';
+  info: {
+    displayName: 'social';
+  };
+  attributes: {
+    platform: Schema.Attribute.Enumeration<
+      ['instagram', 'tiktok', 'linkedln', 'facebook', 'youtube', 'x']
+    >;
+    url: Schema.Attribute.String;
+  };
+}
+
+export interface SharedTextBox extends Struct.ComponentSchema {
+  collectionName: 'components_shared_text_boxes';
+  info: {
+    displayName: 'text-box';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    content: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'blocks.group-image-box': BlocksGroupImageBox;
+      'blocks.group-why': BlocksGroupWhy;
+      'blocks.problem-solution': BlocksProblemSolution;
+      'blocks.stats': BlocksStats;
+      'blocks.title': BlocksTitle;
+      'hero.image-only': HeroImageOnly;
+      'hero.image-text': HeroImageText;
+      'hero.slider': HeroSlider;
+      'layout.header': LayoutHeader;
+      'shared.button': SharedButton;
+      'shared.button-image': SharedButtonImage;
+      'shared.icon-text': SharedIconText;
+      'shared.image-box': SharedImageBox;
+      'shared.link': SharedLink;
+      'shared.logo': SharedLogo;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
+      'shared.richtext': SharedRichtext;
       'shared.seo': SharedSeo;
       'shared.slider': SharedSlider;
+      'shared.social': SharedSocial;
+      'shared.text-box': SharedTextBox;
     }
   }
 }

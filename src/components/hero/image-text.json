@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_hero_image_texts",
+  "info": {
+    "displayName": "image-text"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "sub_heading": {
+      "type": "text"
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "background_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "button_image": {
+      "type": "component",
+      "component": "shared.button-image",
+      "repeatable": true,
+      "max": 2
+    }
+  },
+  "config": {}
+}

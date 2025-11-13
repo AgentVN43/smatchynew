@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_blocks_titles",
+  "info": {
+    "displayName": "title"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true,
+      "max": 2
+    }
+  },
+  "config": {}
+}

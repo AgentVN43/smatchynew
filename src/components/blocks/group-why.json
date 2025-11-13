@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_group_whies",
+  "info": {
+    "displayName": "group_why"
+  },
+  "options": {},
+  "attributes": {
+    "reason": {
+      "type": "component",
+      "component": "shared.text-box",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

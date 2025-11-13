@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_stats",
+  "info": {
+    "displayName": "stats"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "stats_item": {
+      "type": "component",
+      "component": "shared.text-box",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

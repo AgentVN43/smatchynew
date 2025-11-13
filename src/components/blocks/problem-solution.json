@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_blocks_problem_solutions",
+  "info": {
+    "displayName": "problem-solution"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "problem_title": {
+      "type": "text",
+      "default": "The Problem"
+    },
+    "problem_items": {
+      "type": "component",
+      "component": "shared.icon-text",
+      "repeatable": true
+    },
+    "solution_title": {
+      "type": "text",
+      "default": "The Solution"
+    },
+    "solution_items": {
+      "type": "component",
+      "component": "shared.icon-text",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

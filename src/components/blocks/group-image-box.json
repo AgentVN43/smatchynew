@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_group_image_boxes",
+  "info": {
+    "displayName": "group_image_box"
+  },
+  "options": {},
+  "attributes": {
+    "image_box": {
+      "type": "component",
+      "component": "shared.image-box",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

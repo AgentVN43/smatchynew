@@ -1,17 +1,17 @@
 {
-  "collectionName": "components_shared_seos",
+  "collectionName": "components_hero_image_onlies",
   "info": {
-    "displayName": "seo"
+    "displayName": "image-only"
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
-      "type": "string"
+    "heading": {
+      "type": "text"
     },
-    "meta_description": {
-      "type": "string"
+    "sub_heading": {
+      "type": "text"
     },
-    "meta_image": {
+    "background_image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -20,9 +20,6 @@
         "videos",
         "audios"
       ]
-    },
-    "keywords": {
-      "type": "string"
     }
   },
   "config": {}

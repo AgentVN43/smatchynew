@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_headers",
+  "info": {
+    "displayName": "header"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "component",
+      "component": "shared.logo",
+      "repeatable": false
+    },
+    "nav_items": {
+      "type": "component",
+      "component": "shared.link",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

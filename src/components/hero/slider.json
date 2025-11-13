@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_hero_sliders",
+  "info": {
+    "displayName": "slider"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "text"
+    },
+    "sub_heading": {
+      "type": "text"
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true
+    },
+    "slider_images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

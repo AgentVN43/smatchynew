@@ -1,28 +1,23 @@
 {
-  "collectionName": "components_shared_seos",
+  "collectionName": "components_shared_button_images",
   "info": {
-    "displayName": "seo"
+    "displayName": "button-image"
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
+    "label": {
       "type": "string"
     },
-    "meta_description": {
+    "link": {
       "type": "string"
     },
-    "meta_image": {
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
         "images",
-        "files",
-        "videos",
-        "audios"
+        "files"
       ]
-    },
-    "keywords": {
-      "type": "string"
     }
   },
   "config": {}

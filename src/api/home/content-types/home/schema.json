@@ -9,15 +9,53 @@
   "options": {
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
-    "quote": {
-      "type": "component",
-      "component": "shared.quote",
-      "repeatable": true
+    "hero": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::hero.hero"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "components": [
+        "shared.text-box",
+        "shared.social",
+        "shared.seo",
+        "shared.richtext",
+        "shared.logo",
+        "shared.link",
+        "shared.button",
+        "hero.slider",
+        "hero.image-text",
+        "hero.image-only",
+        "blocks.group-why",
+        "shared.image-box",
+        "shared.button-image",
+        "blocks.group-image-box"
+      ]
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
     }
   }
 }

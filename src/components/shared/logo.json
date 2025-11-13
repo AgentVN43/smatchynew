@@ -1,17 +1,21 @@
 {
-  "collectionName": "components_shared_seos",
+  "collectionName": "components_shared_logos",
   "info": {
-    "displayName": "seo"
+    "displayName": "logo"
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
+    "label": {
       "type": "string"
     },
-    "meta_description": {
+    "href": {
       "type": "string"
     },
-    "meta_image": {
+    "is_external": {
+      "type": "boolean",
+      "default": true
+    },
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -20,9 +24,6 @@
         "videos",
         "audios"
       ]
-    },
-    "keywords": {
-      "type": "string"
     }
   },
   "config": {}

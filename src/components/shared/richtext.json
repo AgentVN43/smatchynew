@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_richtexts",
+  "info": {
+    "displayName": "richtext"
+  },
+  "options": {},
+  "attributes": {
+    "text_area": {
+      "type": "richtext"
+    }
+  },
+  "config": {}
+}

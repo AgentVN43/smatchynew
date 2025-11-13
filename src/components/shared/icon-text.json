@@ -1,17 +1,11 @@
 {
-  "collectionName": "components_shared_seos",
+  "collectionName": "components_shared_icon_texts",
   "info": {
-    "displayName": "seo"
+    "displayName": "icon-text"
   },
   "options": {},
   "attributes": {
-    "metaTitle": {
-      "type": "string"
-    },
-    "meta_description": {
-      "type": "string"
-    },
-    "meta_image": {
+    "icon": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -21,8 +15,11 @@
         "audios"
       ]
     },
-    "keywords": {
-      "type": "string"
+    "title": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
     }
   },
   "config": {}
