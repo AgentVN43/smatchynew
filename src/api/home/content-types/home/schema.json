@@ -18,11 +18,6 @@
       "type": "component",
       "component": "shared.quote",
       "repeatable": true
-    },
-    "article": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::article.article"
     }
   }
 }
