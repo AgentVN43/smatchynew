@@ -35,8 +35,8 @@
     "excerpt": {
       "type": "text"
     },
-    "about": {
-      "type": "blocks"
+    "description": {
+      "type": "text"
     }
   }
 }

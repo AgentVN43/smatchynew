@@ -28,6 +28,7 @@ export interface BlocksGroupWhy extends Struct.ComponentSchema {
   };
   attributes: {
     reason: Schema.Attribute.Component<'shared.text-box', true>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -86,6 +87,7 @@ export interface HeroImageOnly extends Struct.ComponentSchema {
     >;
     heading: Schema.Attribute.Text;
     sub_heading: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -126,6 +128,7 @@ export interface HeroSlider extends Struct.ComponentSchema {
       true
     >;
     sub_heading: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 

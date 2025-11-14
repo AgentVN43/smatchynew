@@ -5,6 +5,9 @@
   },
   "options": {},
   "attributes": {
+    "title": {
+      "type": "string"
+    },
     "reason": {
       "type": "component",
       "component": "shared.text-box",
