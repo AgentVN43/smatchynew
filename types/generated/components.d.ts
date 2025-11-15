@@ -79,7 +79,7 @@ export interface BlocksTitle extends Struct.ComponentSchema {
 export interface HeroImageOnly extends Struct.ComponentSchema {
   collectionName: 'components_hero_image_onlies';
   info: {
-    displayName: 'image-only';
+    displayName: 'text-only';
   };
   attributes: {
     background_image: Schema.Attribute.Media<

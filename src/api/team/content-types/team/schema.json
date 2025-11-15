@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "investors",
+  "collectionName": "teams",
   "info": {
-    "singularName": "investor",
-    "pluralName": "investors",
-    "displayName": "3. Investors"
+    "singularName": "team",
+    "pluralName": "teams",
+    "displayName": "2. Team"
   },
   "options": {
     "draftAndPublish": true
@@ -19,22 +19,21 @@
       "components": [
         "shared.text-box",
         "shared.social",
+        "shared.slider",
         "shared.seo",
         "shared.richtext",
+        "shared.rich-text",
+        "shared.quote",
+        "shared.media",
         "shared.logo",
         "shared.link",
         "shared.image-box",
+        "shared.icon-text",
         "shared.button",
         "shared.button-image",
         "hero.slider",
         "hero.image-text",
-        "hero.image-only",
-        "blocks.group-why",
-        "blocks.group-image-box",
-        "blocks.title",
-        "blocks.problem-solution",
-        "blocks.stats",
-        "shared.icon-text"
+        "hero.image-only"
       ]
     }
   }

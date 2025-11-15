@@ -551,7 +551,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
     description: 'Define global settings';
-    displayName: 'Global';
+    displayName: '0. Global';
     pluralName: 'globals';
     singularName: 'global';
   };
@@ -610,7 +610,7 @@ export interface ApiHeroHero extends Struct.CollectionTypeSchema {
 export interface ApiHomeHome extends Struct.SingleTypeSchema {
   collectionName: 'homes';
   info: {
-    displayName: 'Home';
+    displayName: '1. Home';
     pluralName: 'homes';
     singularName: 'home';
   };
@@ -670,7 +670,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
 export interface ApiInvestorInvestor extends Struct.SingleTypeSchema {
   collectionName: 'investors';
   info: {
-    displayName: 'Investors';
+    displayName: '3. Investors';
     pluralName: 'investors';
     singularName: 'investor';
   };
@@ -775,6 +775,52 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTeamTeam extends Struct.SingleTypeSchema {
+  collectionName: 'teams';
+  info: {
+    displayName: '2. Team';
+    pluralName: 'teams';
+    singularName: 'team';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'shared.text-box',
+        'shared.social',
+        'shared.slider',
+        'shared.seo',
+        'shared.richtext',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.logo',
+        'shared.link',
+        'shared.image-box',
+        'shared.icon-text',
+        'shared.button',
+        'shared.button-image',
+        'hero.slider',
+        'hero.image-text',
+        'hero.image-only',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::team.team'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1333,6 +1379,7 @@ declare module '@strapi/strapi' {
       'api::investor.investor': ApiInvestorInvestor;
       'api::slider.slider': ApiSliderSlider;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
+      'api::team.team': ApiTeamTeam;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
