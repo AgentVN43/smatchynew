@@ -665,56 +665,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiInvestorInvestor extends Struct.SingleTypeSchema {
-  collectionName: 'investors';
-  info: {
-    displayName: '3. Investors';
-    pluralName: 'investors';
-    singularName: 'investor';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      [
-        'shared.text-box',
-        'shared.social',
-        'shared.seo',
-        'shared.richtext',
-        'shared.logo',
-        'shared.link',
-        'shared.image-box',
-        'shared.button',
-        'shared.button-image',
-        'hero.slider',
-        'hero.image-text',
-        'hero.image-only',
-        'blocks.group-why',
-        'blocks.group-image-box',
-        'blocks.title',
-        'blocks.problem-solution',
-        'blocks.stats',
-        'shared.icon-text',
-      ]
-    >;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::investor.investor'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiSliderSlider extends Struct.CollectionTypeSchema {
   collectionName: 'sliders';
   info: {
@@ -1403,7 +1353,6 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::hero.hero': ApiHeroHero;
       'api::home.home': ApiHomeHome;
-      'api::investor.investor': ApiInvestorInvestor;
       'api::slider.slider': ApiSliderSlider;
       'api::sport.sport': ApiSportSport;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
