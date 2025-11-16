@@ -513,10 +513,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime;
-    description: Schema.Attribute.Blocks;
     duration: Schema.Attribute.String;
-    icon: Schema.Attribute.Component<'shared.image-box', true>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     level: Schema.Attribute.Enumeration<
       [
         'All levels',
@@ -539,6 +536,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     participants: Schema.Attribute.String;
     price: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
+    sports: Schema.Attribute.Relation<'oneToMany', 'api::sport.sport'>;
     title: Schema.Attribute.String;
     type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -742,6 +740,35 @@ export interface ApiSliderSlider extends Struct.CollectionTypeSchema {
       ['hero.slider', 'hero.image-text', 'hero.image-only']
     >;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSportSport extends Struct.CollectionTypeSchema {
+  collectionName: 'sports';
+  info: {
+    displayName: 'Sport';
+    pluralName: 'sports';
+    singularName: 'sport';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    event: Schema.Attribute.Relation<'manyToOne', 'api::event.event'>;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::sport.sport'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1378,6 +1405,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::investor.investor': ApiInvestorInvestor;
       'api::slider.slider': ApiSliderSlider;
+      'api::sport.sport': ApiSportSport;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::team.team': ApiTeamTeam;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

@@ -43,29 +43,17 @@
     "type": {
       "type": "string"
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "participants": {
       "type": "string"
-    },
-    "description": {
-      "type": "blocks"
     },
     "duration": {
       "type": "string"
     },
-    "icon": {
-      "type": "component",
-      "component": "shared.image-box",
-      "repeatable": true
+    "sports": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sport.sport",
+      "mappedBy": "event"
     }
   }
 }
