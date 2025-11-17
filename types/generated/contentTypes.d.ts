@@ -552,6 +552,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime;
+    desc: Schema.Attribute.RichText;
     duration: Schema.Attribute.String;
     iconLevel: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     level: Schema.Attribute.Enumeration<
@@ -576,6 +577,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     participants: Schema.Attribute.String;
     price: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0>;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'title'>;
     sports: Schema.Attribute.Relation<'oneToMany', 'api::sport.sport'>;
     title: Schema.Attribute.String;
     type: Schema.Attribute.String;
@@ -754,7 +756,6 @@ export interface ApiSportSport extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.RichText;
     event: Schema.Attribute.Relation<'manyToOne', 'api::event.event'>;
     iconType: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;

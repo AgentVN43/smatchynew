@@ -27,9 +27,6 @@
         "audios"
       ]
     },
-    "description": {
-      "type": "richtext"
-    },
     "event": {
       "type": "relation",
       "relation": "manyToOne",
