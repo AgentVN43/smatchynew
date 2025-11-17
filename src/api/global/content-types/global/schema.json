@@ -34,6 +34,20 @@
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
+    },
+    "phone": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "email"
+    },
+    "address": {
+      "type": "string"
+    },
+    "social": {
+      "type": "component",
+      "component": "shared.social",
+      "repeatable": true
     }
   }
 }
