@@ -553,6 +553,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     date: Schema.Attribute.DateTime;
     duration: Schema.Attribute.String;
+    iconLevel: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     level: Schema.Attribute.Enumeration<
       [
         'All levels',
@@ -755,7 +756,8 @@ export interface ApiSportSport extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     description: Schema.Attribute.RichText;
     event: Schema.Attribute.Relation<'manyToOne', 'api::event.event'>;
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    iconType: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::sport.sport'> &
       Schema.Attribute.Private;

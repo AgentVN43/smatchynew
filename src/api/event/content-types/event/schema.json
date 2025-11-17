@@ -54,6 +54,16 @@
       "relation": "oneToMany",
       "target": "api::sport.sport",
       "mappedBy": "event"
+    },
+    "iconLevel": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

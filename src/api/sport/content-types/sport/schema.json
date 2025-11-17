@@ -17,7 +17,7 @@
     "slug": {
       "type": "uid"
     },
-    "icon": {
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
@@ -35,6 +35,16 @@
       "relation": "manyToOne",
       "target": "api::event.event",
       "inversedBy": "sports"
+    },
+    "iconType": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }
