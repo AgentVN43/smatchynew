@@ -295,7 +295,7 @@ export interface SharedSocial extends Struct.ComponentSchema {
   };
   attributes: {
     platform: Schema.Attribute.Enumeration<
-      ['instagram', 'tiktok', 'linkedln', 'facebook', 'youtube', 'x']
+      ['instagram', 'tiktok', 'linkedin', 'facebook', 'youtube', 'x']
     >;
     url: Schema.Attribute.String;
   };
