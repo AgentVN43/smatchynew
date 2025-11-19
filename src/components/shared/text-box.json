@@ -8,7 +8,13 @@
     "title": {
       "type": "string"
     },
-    "content": {
+    "heading": {
+      "type": "text"
+    },
+    "sub_heading": {
+      "type": "text"
+    },
+    "description": {
       "type": "text"
     },
     "button": {

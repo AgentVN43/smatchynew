@@ -5,6 +5,18 @@
   },
   "options": {},
   "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "sub_heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
     "icon": {
       "type": "media",
       "multiple": false,
@@ -15,11 +27,10 @@
         "audios"
       ]
     },
-    "title": {
-      "type": "text"
-    },
-    "description": {
-      "type": "text"
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}

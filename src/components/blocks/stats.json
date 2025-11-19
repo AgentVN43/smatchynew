@@ -12,6 +12,11 @@
       "type": "component",
       "component": "shared.text-box",
       "repeatable": true
+    },
+    "stats_icon": {
+      "type": "component",
+      "component": "shared.icon-text",
+      "repeatable": true
     }
   },
   "config": {}

@@ -657,6 +657,61 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiInvestorInvestor extends Struct.SingleTypeSchema {
+  collectionName: 'investors';
+  info: {
+    displayName: '3. Investor';
+    pluralName: 'investors';
+    singularName: 'investor';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'shared.text-box',
+        'shared.social',
+        'shared.slider',
+        'shared.seo',
+        'shared.richtext',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.logo',
+        'shared.link',
+        'shared.image-box',
+        'shared.icon-text',
+        'shared.button',
+        'shared.button-image',
+        'blocks.title',
+        'blocks.stats',
+        'blocks.problem-solution',
+        'blocks.group-why',
+        'blocks.group-image-box',
+        'blocks.card-grid',
+        'hero.slider',
+        'hero.image-text',
+        'hero.image-only',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::investor.investor'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSportSport extends Struct.CollectionTypeSchema {
   collectionName: 'sports';
   info: {
@@ -1313,6 +1368,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::hero.hero': ApiHeroHero;
       'api::home.home': ApiHomeHome;
+      'api::investor.investor': ApiInvestorInvestor;
       'api::sport.sport': ApiSportSport;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::team.team': ApiTeamTeam;

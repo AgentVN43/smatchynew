@@ -6,7 +6,7 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "text"
+      "type": "string"
     },
     "image": {
       "type": "media",
@@ -17,6 +17,12 @@
         "videos",
         "audios"
       ]
+    },
+    "heading": {
+      "type": "text"
+    },
+    "sub_heading": {
+      "type": "text"
     }
   },
   "config": {}

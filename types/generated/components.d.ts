@@ -54,6 +54,7 @@ export interface BlocksStats extends Struct.ComponentSchema {
     displayName: 'stats';
   };
   attributes: {
+    stats_icon: Schema.Attribute.Component<'shared.icon-text', true>;
     stats_item: Schema.Attribute.Component<'shared.text-box', true>;
     title: Schema.Attribute.String;
   };
@@ -174,9 +175,12 @@ export interface SharedIconText extends Struct.ComponentSchema {
     displayName: 'icon-text';
   };
   attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.Text;
+    heading: Schema.Attribute.String;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.Text;
+    sub_heading: Schema.Attribute.String;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -186,8 +190,10 @@ export interface SharedImageBox extends Struct.ComponentSchema {
     displayName: 'image-box';
   };
   attributes: {
+    heading: Schema.Attribute.Text;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    title: Schema.Attribute.Text;
+    sub_heading: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -219,11 +225,12 @@ export interface SharedLogo extends Struct.ComponentSchema {
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
-    displayName: 'Media';
+    displayName: 'media';
     icon: 'file-video';
   };
   attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    file: Schema.Attribute.Media<'videos'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -308,7 +315,9 @@ export interface SharedTextBox extends Struct.ComponentSchema {
   };
   attributes: {
     button: Schema.Attribute.Component<'shared.button', false>;
-    content: Schema.Attribute.Text;
+    description: Schema.Attribute.Text;
+    heading: Schema.Attribute.Text;
+    sub_heading: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }
