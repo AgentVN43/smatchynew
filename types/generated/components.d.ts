@@ -73,6 +73,8 @@ export interface BlocksTitle extends Struct.ComponentSchema {
         },
         number
       >;
+    heading: Schema.Attribute.Text;
+    sub_heading: Schema.Attribute.Text;
     title: Schema.Attribute.String;
   };
 }

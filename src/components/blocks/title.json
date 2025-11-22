@@ -8,6 +8,12 @@
     "title": {
       "type": "string"
     },
+    "heading": {
+      "type": "text"
+    },
+    "sub_heading": {
+      "type": "text"
+    },
     "button": {
       "type": "component",
       "component": "shared.button",
