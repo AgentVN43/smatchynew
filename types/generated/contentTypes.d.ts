@@ -464,7 +464,7 @@ export interface ApiContactSubmissionContactSubmission
   extends Struct.CollectionTypeSchema {
   collectionName: 'contact_submissions';
   info: {
-    displayName: 'Contact Submission';
+    displayName: 'Contact Form';
     pluralName: 'contact-submissions';
     singularName: 'contact-submission';
   };
@@ -772,6 +772,43 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPreRegisterFormPreRegisterForm
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'pre_register_forms';
+  info: {
+    displayName: 'Pre-register Form';
+    pluralName: 'pre-register-forms';
+    singularName: 'pre-register-form';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    comment: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    full_name: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pre-register-form.pre-register-form'
+    > &
+      Schema.Attribute.Private;
+    other_role: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    role: Schema.Attribute.Text;
+    sport: Schema.Attribute.Text;
+    status_contact: Schema.Attribute.Enumeration<
+      ['new', 'in progress', 'resolved']
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1437,6 +1474,7 @@ declare module '@strapi/strapi' {
       'api::home.home': ApiHomeHome;
       'api::investor.investor': ApiInvestorInvestor;
       'api::post.post': ApiPostPost;
+      'api::pre-register-form.pre-register-form': ApiPreRegisterFormPreRegisterForm;
       'api::sport.sport': ApiSportSport;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::team.team': ApiTeamTeam;

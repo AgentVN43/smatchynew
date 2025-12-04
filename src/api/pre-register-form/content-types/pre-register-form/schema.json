@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "contact_submissions",
+  "collectionName": "pre_register_forms",
   "info": {
-    "singularName": "contact-submission",
-    "pluralName": "contact-submissions",
-    "displayName": "Contact Form"
+    "singularName": "pre-register-form",
+    "pluralName": "pre-register-forms",
+    "displayName": "Pre-register Form"
   },
   "options": {
     "draftAndPublish": true
@@ -18,13 +18,14 @@
       "type": "email",
       "required": true
     },
-    "subject": {
-      "type": "string"
+    "role": {
+      "type": "text"
     },
-    "message": {
-      "type": "text",
-      "maxLength": 5000,
-      "required": true
+    "sport": {
+      "type": "text"
+    },
+    "comment": {
+      "type": "text"
     },
     "status_contact": {
       "type": "enumeration",
@@ -33,6 +34,9 @@
         "in progress",
         "resolved"
       ]
+    },
+    "other_role": {
+      "type": "string"
     }
   }
 }
