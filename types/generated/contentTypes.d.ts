@@ -869,6 +869,7 @@ export interface ApiTeamMemberTeamMember extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<1>;
     publishedAt: Schema.Attribute.DateTime;
     role: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
