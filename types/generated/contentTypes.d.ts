@@ -622,8 +622,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
         i18n: {
           localized: true;
         };
-      }> &
-      Schema.Attribute.DefaultTo<0>;
+      }>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'title'>;
     sports: Schema.Attribute.Relation<'oneToMany', 'api::sport.sport'>;
