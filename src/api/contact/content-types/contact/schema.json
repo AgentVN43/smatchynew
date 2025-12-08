@@ -1,0 +1,46 @@
+{
+  "kind": "singleType",
+  "collectionName": "contacts",
+  "info": {
+    "singularName": "contact",
+    "pluralName": "contacts",
+    "displayName": "6. Contact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.text-box",
+        "shared.social",
+        "shared.slider",
+        "shared.seo",
+        "shared.richtext",
+        "shared.rich-text",
+        "shared.quote",
+        "shared.media",
+        "shared.logo",
+        "shared.link",
+        "shared.image-box",
+        "shared.icon-text",
+        "shared.button",
+        "shared.button-image",
+        "hero.slider",
+        "hero.image-text",
+        "hero.image-only",
+        "blocks.title",
+        "blocks.stats",
+        "blocks.problem-solution",
+        "blocks.group-why",
+        "blocks.group-image-box",
+        "blocks.card-grid"
+      ]
+    }
+  }
+}

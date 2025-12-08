@@ -538,6 +538,61 @@ export interface ApiContactSubmissionContactSubmission
   };
 }
 
+export interface ApiContactContact extends Struct.SingleTypeSchema {
+  collectionName: 'contacts';
+  info: {
+    displayName: '6. Contact';
+    pluralName: 'contacts';
+    singularName: 'contact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'shared.text-box',
+        'shared.social',
+        'shared.slider',
+        'shared.seo',
+        'shared.richtext',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.logo',
+        'shared.link',
+        'shared.image-box',
+        'shared.icon-text',
+        'shared.button',
+        'shared.button-image',
+        'hero.slider',
+        'hero.image-text',
+        'hero.image-only',
+        'blocks.title',
+        'blocks.stats',
+        'blocks.problem-solution',
+        'blocks.group-why',
+        'blocks.group-image-box',
+        'blocks.card-grid',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact.contact'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Struct.CollectionTypeSchema {
   collectionName: 'events';
   info: {
@@ -638,6 +693,61 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiEventsPageEventsPage extends Struct.SingleTypeSchema {
+  collectionName: 'events_pages';
+  info: {
+    displayName: '4. Events';
+    pluralName: 'events-pages';
+    singularName: 'events-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'shared.text-box',
+        'shared.social',
+        'shared.slider',
+        'shared.seo',
+        'shared.richtext',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.logo',
+        'shared.link',
+        'shared.image-box',
+        'shared.icon-text',
+        'shared.button',
+        'shared.button-image',
+        'hero.slider',
+        'hero.image-text',
+        'hero.image-only',
+        'blocks.title',
+        'blocks.stats',
+        'blocks.problem-solution',
+        'blocks.group-why',
+        'blocks.group-image-box',
+        'blocks.card-grid',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::events-page.events-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1030,6 +1140,61 @@ export interface ApiPreRegisterFormPreRegisterForm
           localized: true;
         };
       }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProfessionalProfessional extends Struct.SingleTypeSchema {
+  collectionName: 'professionals';
+  info: {
+    displayName: '5. Professional';
+    pluralName: 'professionals';
+    singularName: 'professional';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      [
+        'shared.text-box',
+        'shared.social',
+        'shared.slider',
+        'shared.seo',
+        'shared.richtext',
+        'shared.rich-text',
+        'shared.quote',
+        'shared.media',
+        'shared.logo',
+        'shared.link',
+        'shared.image-box',
+        'shared.icon-text',
+        'shared.button',
+        'shared.button-image',
+        'hero.slider',
+        'hero.image-text',
+        'hero.image-only',
+        'blocks.title',
+        'blocks.stats',
+        'blocks.problem-solution',
+        'blocks.group-why',
+        'blocks.group-image-box',
+        'blocks.card-grid',
+      ]
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::professional.professional'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1792,13 +1957,16 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::category.category': ApiCategoryCategory;
       'api::contact-submission.contact-submission': ApiContactSubmissionContactSubmission;
+      'api::contact.contact': ApiContactContact;
       'api::event.event': ApiEventEvent;
+      'api::events-page.events-page': ApiEventsPageEventsPage;
       'api::global.global': ApiGlobalGlobal;
       'api::hero.hero': ApiHeroHero;
       'api::home.home': ApiHomeHome;
       'api::investor.investor': ApiInvestorInvestor;
       'api::post.post': ApiPostPost;
       'api::pre-register-form.pre-register-form': ApiPreRegisterFormPreRegisterForm;
+      'api::professional.professional': ApiProfessionalProfessional;
       'api::sport.sport': ApiSportSport;
       'api::team-member.team-member': ApiTeamMemberTeamMember;
       'api::team.team': ApiTeamTeam;
