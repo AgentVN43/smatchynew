@@ -18,11 +18,9 @@ module.exports = {
       );
 
       // 2. (Tùy chọn) Gửi email thông báo cho quản trị viên
-      await strapi.waitForPlugins();
       await strapi.plugins["email"].services.email.send({
         to: "annk.sale@gmail.com",
         from: "onboarding@resend.dev",
-        cc: "sam.nguyen@amagumolabs.com",
         subject: `New Contact Form Submission: ${subject}`,
         text: `<p>${message}</p>`,
       });
