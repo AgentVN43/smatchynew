@@ -18,19 +18,21 @@ module.exports = {
       );
 
       // 2. (Tùy chọn) Gửi email thông báo cho quản trị viên
-      /*
-      await strapi.plugins['email'].services.email.send({
-        to: 'admin@yourdomain.com',
-        from: 'no-reply@yourdomain.com',
+      await strapi.waitForPlugins();
+      await strapi.plugins["email"].services.email.send({
+        to: "annk.sale@gmail.com",
+        from: "onboarding@resend.dev",
+        cc: "sam.nguyen@amagumolabs.com",
         subject: `New Contact Form Submission: ${subject}`,
-        text: `From: ${name} (${email})\nMessage: ${message}`,
+        text: `<p>${message}</p>`,
       });
-      */
 
-      return { data: entry, message: "Message successfully sent and saved." };
+      return { entry, message: "Message successfully sent and saved." };
     } catch (error) {
-      ctx.body = { error: "Failed to process submission." };
+      console.error("📧 Error:", error);
+      //ctx.body = { error: "Failed to process submission." };
       ctx.status = 500;
     }
   },
 };
+
