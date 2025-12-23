@@ -19,7 +19,9 @@
     "@strapi/plugin-cloud": "5.31.0",
     "@strapi/plugin-users-permissions": "5.31.0",
     "@strapi/strapi": "5.31.0",
+    "app-store-scraper": "^0.18.0",
     "fs-extra": "^10.0.0",
+    "google-play-scraper": "^10.1.2",
     "mime-types": "^2.1.27",
     "mysql2": "3.9.8",
     "react": "^18.0.0",
@@ -27,7 +29,6 @@
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=20.0.0 <=24.x.x",
     "npm": ">=6.0.0"
