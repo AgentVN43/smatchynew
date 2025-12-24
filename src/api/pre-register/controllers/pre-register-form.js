@@ -21,14 +21,12 @@ module.exports = {
       );
 
       // 2. (Tùy chọn) Gửi email thông báo cho quản trị viên
-      /*
-      await strapi.plugins['email'].services.email.send({
-        to: 'admin@yourdomain.com',
-        from: 'no-reply@yourdomain.com',
-        subject: `New Contact Form Submission: ${subject}`,
-        text: `From: ${name} (${email})\nMessage: ${message}`,
+      await strapi.plugins["email"].services.email.send({
+        to: "support@smatchy.app",
+        from: "onboarding@resend.dev",
+        subject: `New Contact From Pre-Register Form`,
+        text: `Full Name: ${full_name}\nEmail: ${email}\nRole: ${role}\nOther Role: ${other_role}\nSport: ${sport}\nComment: <p>${comment}</p>`,
       });
-      */
 
       return { data: entry, message: "Message successfully sent and saved." };
     } catch (error) {

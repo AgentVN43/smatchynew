@@ -19,10 +19,10 @@ module.exports = {
 
       // 2. (Tùy chọn) Gửi email thông báo cho quản trị viên
       await strapi.plugins["email"].services.email.send({
-        to: "annk.sale@gmail.com",
+        to: "support@smatchy.app",
         from: "onboarding@resend.dev",
-        subject: `New Contact Form Submission: ${subject}`,
-        text: `<p>${message}</p>`,
+        subject: `New Contact From Contact Form: ${subject}`,
+        text: `<p>Full Name: ${full_name}</p>\n<p>Email: ${email}</p>\n<p>Message: ${message}</p>`,
       });
 
       return { entry, message: "Message successfully sent and saved." };
@@ -33,4 +33,3 @@ module.exports = {
     }
   },
 };
-
