@@ -1,15 +1,9 @@
-module.exports = {
+module.exports = ({ env }) => ({
   email: {
     config: {
-      provider: "nodemailer",
+      provider: "sendgrid",
       providerOptions: {
-        host: "smtp.sendgrid.net",
-        port: 587,
-        secure: false,
-        auth: {
-          user: "apikey",
-          pass: process.env.SENDGRID_API_KEY,
-        },
+        apiKey: env("SENDGRID_API_KEY"),
       },
       settings: {
         defaultFrom: "huong.pham@amagumolabs.com",
@@ -17,4 +11,4 @@ module.exports = {
       },
     },
   },
-};
+});

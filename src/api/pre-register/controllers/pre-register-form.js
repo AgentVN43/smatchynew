@@ -22,11 +22,11 @@ module.exports = {
 
       // 2. (Tùy chọn) Gửi email thông báo cho quản trị viên
       await strapi.plugins["email"].services.email.send({
-        to: "support@smatchy.app",
+        to: "annk.sale@gmail.com",
         from: "huong.pham@amagumolabs.com",
-        cc: "sam.nguyen@amagumolabs.com, annk.sale@gmail.com",
+        cc: "sam.nguyen@amagumolabs.com",
         subject: `New Contact From Pre-Register Form`,
-        text: `<p>Full Name: ${full_name}</p>\n<p>Email: ${email}</p>\n<p>Role: ${role}</p>\n<p>Sport: ${sport}</p>\n<p>Comment: <p>${comment}</p>`,
+        text: `Full Name: ${full_name}\nEmail: ${email}\nRole: ${role}\nSport: ${sport}\nComment: ${comment}`,
       });
 
       return { data: entry, message: "Message successfully sent and saved." };
