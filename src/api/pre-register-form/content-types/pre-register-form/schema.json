@@ -32,16 +32,16 @@
       },
       "required": true
     },
-    "role": {
-      "type": "text",
+    "sport": {
+      "type": "json",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "sport": {
-      "type": "text",
+    "role": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true

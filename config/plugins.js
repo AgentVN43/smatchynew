@@ -3,17 +3,17 @@ module.exports = {
     config: {
       provider: "nodemailer",
       providerOptions: {
-        host: "smtp.resend.com",
+        host: "smtp.sendgrid.net",
         port: 587,
         secure: false,
         auth: {
-          user: "resend",
-          pass: "re_HLP31FjX_4L9SF6UYjK41P2xkKtrmAnq3",
+          user: "apikey",
+          pass: "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",
         },
       },
       settings: {
-        defaultFrom: "onboarding@resend.dev",
-        defaultReplyTo: "onboarding@resend.dev",
+        defaultFrom: "huong.pham@amagumolabs.com",
+        defaultReplyTo: "huong.pham@amagumolabs.com",
       },
     },
   },

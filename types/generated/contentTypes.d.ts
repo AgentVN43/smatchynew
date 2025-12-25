@@ -1148,13 +1148,13 @@ export interface ApiPreRegisterFormPreRegisterForm
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
-    role: Schema.Attribute.Text &
+    role: Schema.Attribute.String &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    sport: Schema.Attribute.Text &
+    sport: Schema.Attribute.JSON &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
