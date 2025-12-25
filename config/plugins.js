@@ -8,7 +8,8 @@ module.exports = {
         secure: false,
         auth: {
           user: "apikey",
-          pass: "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",
+          pass: process.env.SENDGRID_API_KEY,
+,
         },
       },
       settings: {
