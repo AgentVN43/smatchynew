@@ -17,19 +17,34 @@ module.exports = {
         }
       );
 
-      // 2. (Tùy chọn) Gửi email thông báo cho quản trị viên
+      // 2. Gửi email thông báo cho quản trị viên
+      const submission_date = new Date().toLocaleDateString("fr-FR");
+      const emailText = `
+      Hello!
+      
+      You have received a new message via the contact form on your Smatchy site.
+
+      Contact details:
+      Full name: ${full_name}
+      Email: ${email}
+      Date: ${submission_date}
+      Message:
+      ${message}`;
+
+      const defaultTo = process.env.DEFAULT_TO;
+
       await strapi.plugins["email"].services.email.send({
-        to: "annk.sale@gmail.com",
+        to: defaultTo,
         cc: "sam.nguyen@amagumolabs.com",
-        subject: `New Contact From Contact Form: ${subject}`,
-        text: `Full Name: ${full_name}\nEmail: ${email}\nMessage: ${message}`,
+        subject: `New Contact From Contact Form`,
+        text: emailText,
       });
 
       return { entry, message: "Message successfully sent and saved." };
     } catch (error) {
       console.error("📧 Error:", error);
-      //ctx.body = { error: "Failed to process submission." };
       ctx.status = 500;
+      ctx.body = { error: error.message };
     }
   },
 };

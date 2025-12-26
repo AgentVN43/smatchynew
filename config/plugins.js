@@ -6,8 +6,8 @@ module.exports = ({ env }) => ({
         apiKey: env("SENDGRID_API_KEY"),
       },
       settings: {
-        defaultFrom: "huong.pham@amagumolabs.com",
-        defaultReplyTo: "huong.pham@amagumolabs.com",
+        defaultFrom: env("DEFAULT_FROM"),
+        defaultReplyTo: env("DEFAULT_REPLY_TO"),
       },
     },
   },
