@@ -1100,13 +1100,14 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::category.category'
     >;
-    content: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    contents: Schema.Attribute.RichText &
+    content: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -1115,7 +1116,13 @@ export interface ApiPostPost extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    excerpt: Schema.Attribute.Blocks &
+    excerpt: Schema.Attribute.RichText &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
