@@ -33,7 +33,6 @@
       "components": [
         "shared.text-box",
         "shared.social",
-        "shared.seo",
         "shared.richtext",
         "shared.logo",
         "shared.link",
@@ -47,7 +46,8 @@
         "blocks.card-grid",
         "hero.slider",
         "hero.image-text",
-        "hero.image-only"
+        "hero.image-only",
+        "shared.seo"
       ]
     }
   }

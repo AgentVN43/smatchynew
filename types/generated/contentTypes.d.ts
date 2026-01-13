@@ -560,7 +560,6 @@ export interface ApiContactContact extends Struct.SingleTypeSchema {
         'shared.text-box',
         'shared.social',
         'shared.slider',
-        'shared.seo',
         'shared.richtext',
         'shared.rich-text',
         'shared.quote',
@@ -735,7 +734,6 @@ export interface ApiEventsPageEventsPage extends Struct.SingleTypeSchema {
         'shared.text-box',
         'shared.social',
         'shared.slider',
-        'shared.seo',
         'shared.richtext',
         'shared.rich-text',
         'shared.quote',
@@ -856,12 +854,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    defaultSeo: Schema.Attribute.Component<'shared.seo', false> &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     email: Schema.Attribute.Email &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -883,6 +875,12 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
         };
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    seo: Schema.Attribute.Component<'shared.seo', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     siteDescription: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
@@ -971,7 +969,6 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
       [
         'shared.text-box',
         'shared.social',
-        'shared.seo',
         'shared.richtext',
         'shared.logo',
         'shared.link',
@@ -986,6 +983,7 @@ export interface ApiHomeHome extends Struct.SingleTypeSchema {
         'hero.slider',
         'hero.image-text',
         'hero.image-only',
+        'shared.seo',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1032,7 +1030,6 @@ export interface ApiInvestorInvestor extends Struct.SingleTypeSchema {
         'shared.text-box',
         'shared.social',
         'shared.slider',
-        'shared.seo',
         'shared.richtext',
         'shared.rich-text',
         'shared.quote',
@@ -1250,7 +1247,6 @@ export interface ApiProfessionalProfessional extends Struct.SingleTypeSchema {
         'shared.text-box',
         'shared.social',
         'shared.slider',
-        'shared.seo',
         'shared.richtext',
         'shared.rich-text',
         'shared.quote',
@@ -1441,7 +1437,6 @@ export interface ApiTeamTeam extends Struct.SingleTypeSchema {
         'shared.text-box',
         'shared.social',
         'shared.slider',
-        'shared.seo',
         'shared.richtext',
         'shared.rich-text',
         'shared.quote',
